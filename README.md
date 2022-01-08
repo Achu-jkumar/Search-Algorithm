@@ -19,27 +19,87 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ```
-
+Program for linear search method to match the item in a list
+Developed by: J.Archana priya
+RegisterNumber: 21500533
+def linearSearch(array,n,k):
+    for i in range(n):
+        if (array[i] == k):
+            return i
+    return -1
+array = eval(input())
+k = int(input())
+n = len(array)
+array.sort()
+result= linearSearch(array,n,k)
+if (result==-1):
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ",  result)
+    
 
 
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
-
-
-
-
-
+Program to find the element in a list using Binary Search(Iterative Method)..
+Developed by: J.Archana priya
+RegisterNumber: 21500533
+'''
+def binarySearchIter(array, k, low, high):
+    while low<=high :
+        mid=low+(high - low )//2
+        if array[mid] == k:
+            return mid
+        elif array[mid]<k:
+            low=mid+1
+        else:
+            high=mid-1
+    return -1
+array = eval(input())
+array.sort()
+k = eval(input()) #k-item to be searched
+result= binarySearchIter (array, k, 0, len(array)-1)
+if (result== -1) :
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ",result)
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
-
-
-
-
+Developed by: Archana priya
+RegisterNumber: 21500533
+'''
+def BinarySearch(array, k, low, high):
+    while low<=high :
+        mid=low+(high - low )//2
+        if array[mid] == k:
+            return mid
+        elif array[mid]>k:
+           return BinarySearch(array, k, low,mid-1)
+        else:
+           return BinarySearch(array,k,mid+1,high)
+    return -1
+array = eval(input())
+array.sort()
+k = eval(input()) #k-item to be searched
+result= BinarySearch (array, k, 0, len(array)-1)
+if (result== -1) :
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ",result)   
 
 ```
-## Sample Input and Output
+## Output
+![search1](./search1.png)
+![search2](./search2.png)
+![search3](./search3.png)
 
 
 
